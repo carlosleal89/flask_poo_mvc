@@ -14,3 +14,8 @@ class LanguageModel(AbstractModel):
             "name": self.data["name"],
             "acronym": self.data["acronym"]
         }
+
+    @classmethod
+    def list_dicts(cls):
+        data = cls.find()
+        return [obj.to_dict() for obj in data]
