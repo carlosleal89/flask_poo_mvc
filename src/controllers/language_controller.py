@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, request, render_template
 from models.language_model import LanguageModel
 from deep_translator import GoogleTranslator
 
@@ -26,16 +26,19 @@ def index():
 
 @language_controller.route("/", methods=["POST"])
 def translate_text():
-    request_data = request.json
-    text_to_translate = request_data.get("text_to_translate", "")
+    text_to_translate = request.form.get("text_to_translate", "")
     # o segundo parametro é o que retorna caso a chave nao exista
-    translate_from = request_data.get("translate_from", "")
-    translate_to = request_data.get("translate_to", "")
+    translate_from = request.form.get("translate_from", "")
+    translate_to = request.form.get("translate_to", "")
 
     translated = GoogleTranslator(
-        source=translate_from, target=translate_to
-        ).translate(
-        text_to_translate
-    )
+        source="auto", target="pt"
+        ).translate(text_to_translate)
 
-    return jsonify({"translated": translated}), 201
+    return render_template(
+        "index.html",
+        text_to_translate=text_to_translate,
+        translate_from=translate_from,
+        translate_to=translate_to,
+        translated=translated
+    )
