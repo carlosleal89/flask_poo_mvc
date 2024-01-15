@@ -26,13 +26,13 @@ def index():
 
 @language_controller.route("/", methods=["POST"])
 def translate_text():
-    text_to_translate = request.form.get("text_to_translate", "")
+    text_to_translate = request.form.get("text_to_translate")
     # o segundo parametro é o que retorna caso a chave nao exista
-    translate_from = request.form.get("translate_from", "")
-    translate_to = request.form.get("translate_to", "")
+    translate_from = request.form.get("translate_from")
+    translate_to = request.form.get("translate_to")
 
     translated = GoogleTranslator(
-        source="auto", target="pt"
+        source=translate_from, target=translate_to
         ).translate(text_to_translate)
 
     return render_template(
