@@ -1,10 +1,41 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Traduzo
+
+Uma ferramenta de tradução de textos entre vários idiomas, utilizando Python com o Framework Flask, para criar uma aplicação Server Side. Ou seja, o Back-end (pela controller) fornecerá diretamente a camada View, para a pessoa usuária.
+
+## Funcionalidades Principais
+- Traduza textos entre os principais idiomas;
+
+## Tecnologias Utilizadas
+- **Backend:** Python, Flask e Jinja2;
+- **Banco de dados:** MongoDB;
+- Google Translate API;
+
+
+## Como Executar o Projeto:
+  **Clone o Repositório:**
+  
+    git clone git@github.com:carlosleal89/flask_poo_mvc.git
+
+  **Crie o ambiente virtual:**
+
+    python3 -m venv .venv && source .venv/bin/activate
+
+  **Instale as Dependências:**
+
+    python3 -m pip install -r dev-requirements.txt
+
+## Docker
+- Caso não tenha o Docker instalado em seu sistema, acesse https://www.docker.com/get-started/
+  
+  1. **Execute o banco e Flask pelo Docker Compose:**
+     
+         docker compose up translate
+
+## As seguintes habilidades foram praticadas nesse projeto:
+- Implementar uma API utilizando arquitetura em camadas MVC;
+- Utilizar o Docker para projetos Python;
+- Conhecimentos de Orientação a Objetos no desenvolvimento WEB.
+- Testes para APIs para garantir a implementação dos endpoints;
+- Interagir com um banco de dados não relacional MongoDB;
+- Desenvolver páginas web Server Side.
+      
