@@ -30,6 +30,10 @@ Uma ferramenta de tradução de textos entre vários idiomas, utilizando Python 
   1. **Execute o banco e Flask pelo Docker Compose:**
      
          docker compose up translate
+         
+  2. **Popule o banco com os dados dos idiomas:**
+
+         docker compose exec -it translate python3 src/run_seeds.py       
 
 ## As seguintes habilidades foram praticadas nesse projeto:
 - Implementar uma API utilizando arquitetura em camadas MVC;
